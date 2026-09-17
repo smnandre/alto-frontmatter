@@ -8,14 +8,14 @@ It is designed for Markdown processors, static-site generators, content tools,
 and other applications that need predictable metadata without a general-purpose
 YAML runtime. Unsupported constructs fail explicitly with source coordinates.
 
-## Start
+## Introduction
 
 - [Installation](installation.md) covers requirements and package installation.
-- [Getting Started](getting-started.md) reads a complete document and locates its body.
+- [Getting started](getting-started.md) reads a complete document and locates its body.
 
-## Work with data
+## Metadata
 
-- [Typed Metadata](metadata.md) documents accessors, defaults, enums, and dates.
+- [Typed metadata](metadata.md) documents accessors, defaults, enums, and dates.
 - [Decoding](decoding.md) defines the accepted YAML subset and scalar typing.
 - [Rendering](rendering.md) creates YAML, JSON, or TOML front matter.
 - [Integration](integration.md) covers the decoder and renderer contracts.
@@ -23,4 +23,10 @@ YAML runtime. Unsupported constructs fail explicitly with source coordinates.
 ## Reference
 
 - [Errors](errors.md) explains the exception hierarchy and recovery boundaries.
-- [Design](design.md) records performance goals, guarantees, and limitations.
+- [Guarantees](design.md) records performance goals, guarantees, and limitations.
+
+## Package
+
+- [Changelog](https://github.com/altophp/frontmatter/blob/main/CHANGELOG.md)
+- [Contributing](https://github.com/altophp/frontmatter/blob/main/CONTRIBUTING.md)
+- [Support](https://github.com/altophp/frontmatter/blob/main/SUPPORT.md)

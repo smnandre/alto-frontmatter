@@ -1,4 +1,4 @@
-# Design
+# Guarantees and limits
 
 ALTO Front Matter favors predictable document metadata over complete YAML
 compatibility.

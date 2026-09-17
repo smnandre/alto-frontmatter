@@ -1,9 +1,14 @@
-# Getting Started
+# Getting started
 
 Read a complete document, access its metadata, and slice the remaining body
-from the original source.
+from the original source. After [installation](installation.md), save this
+script as `metadata.php` beside `vendor/` and run `php metadata.php`.
 
 ```php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
 use Alto\FrontMatter\FrontMatter;
 
 $document = <<<'MARKDOWN'
@@ -28,7 +33,26 @@ $body = substr(
     $document,
     $metadata->sourceOffset() + $metadata->sourceLength(),
 );
+
+printf("Title: %s\nDraft: %s\nAuthor: %s\nBody: %s\n",
+    $title,
+    $draft ? 'yes' : 'no',
+    $author['name'],
+    $body,
+);
 ```
+
+The script prints:
+
+```text
+Title: Hello World
+Draft: no
+Author: Jane
+Body: # Hello World
+```
+
+Source offsets count bytes in the original string, including its front matter
+fences. Slice that same string rather than an already normalized copy.
 
 `fromString()` takes document contents, not a path. It decodes eagerly and
 returns an empty `Metadata` object when no front matter block is present.

@@ -52,3 +52,11 @@ core schema without Symfony's additional conventions.
 
 Quote zero-padded identifiers and any other value that must remain a string.
 See [Errors](errors.md) for syntax diagnostics.
+
+## Correct invalid metadata
+
+Use the reported line and column to find the first rejected construct. Replace
+unsupported YAML features with explicit values rather than retrying in a lenient
+mode: there is none. Quote identifiers when scalar typing differs from the
+required type. For TOML input, provide a custom decoder or convert the metadata
+to the documented YAML subset before calling the default decoder.
